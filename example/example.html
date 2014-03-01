@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> - jsFiddle demo</title>
+    <script type="text/javascript" src="../printToTable.js"></script>
+    <style>
+        table{
+            margin: 10px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th,td{
+            padding: 10px;
+        }
+
+        td{
+            border-top: 1px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+<table id="table">
+    <thead>
+        <th id="publicationDate">Publication date</th>
+        <th id="contracted">Contracted</th>
+        <th id="contracting">Contracting</th>
+        <th id="id">id</th>
+        <th id="objectBriefDescription">Object brief description</th>
+        <th id="initialContractualPrice">Initial contractual price</th>
+        <th id="signingDate">Signing date</th>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+</body>
+
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+    var orderedObject = {
+        publicationDate: "28-02-2014",
+        contracted: "Cash",
+        contracting: "Danish National Bank",
+        id: 1,
+        objectBriefDescription: "Money for the people",
+        initialContractualPrice: "12.945,50 kr",
+        signingDate: "28-02-2014",  
+    };
+
+    var unorderedObject = {
+        id: 1,
+        objectBriefDescription: "Money for the people",
+        initialContractualPrice: "12.945,50 kr",
+        signingDate: "28-02-2014",
+        publicationDate: "28-02-2014",
+        contracted: "Cash",
+        contracting: "Danish National Bank",
+    };
+
+    var toManyPropertiesObject = {
+        publicationDate: "28-02-2014",
+        contracted: "Cash",
+        contracting: "Danish National Bank",
+        id: 1,
+        objectBriefDescription: "Money for the people",
+        initialContractualPrice: "12.945,50 kr",
+        signingDate: "28-02-2014",
+        toMany1: "",
+        toMany2: "",
+        toMany3: "",
+    };
+
+
+    var toFewPropertiesObject = {
+        publicationDate: "28-02-2014",
+        contracting: "Danish National Bank",
+        id: 1,
+        objectBriefDescription: "Money for the people",
+    };
+
+    printObjectInTable(orderedObject, "table");
+    printObjectInTable(unorderedObject, "table");
+    printObjectInTable(toManyPropertiesObject, "table");
+    printObjectInTable(toFewPropertiesObject, "table");
+
+}
+</script>
+</html>
+
