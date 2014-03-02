@@ -8,7 +8,6 @@
         childrenLength = thChildren.length,
         numberOfProperties = thChildren.length,
         tr = document.createElement("tr");
-    console.log(thChildren);
     for (var i = 0; i < thChildren.length; i++) {
         var th = thChildren[i];
         // important check that this is objects own property 
