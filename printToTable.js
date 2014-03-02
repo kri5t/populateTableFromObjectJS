@@ -6,7 +6,6 @@
 ;function printObjectInTable(objectToIterate, tableID) {
     var thChildren = document.getElementById(tableID).getElementsByTagName("th"),
         childrenLength = thChildren.length,
-        numberOfProperties = thChildren.length,
         tr = document.createElement("tr");
     for (var i = 0; i < thChildren.length; i++) {
         var th = thChildren[i];
