@@ -6,26 +6,17 @@
 ;function printObjectInTable(objectToIterate, tableID) {
     var propertyOrder = getTHeadIDs(tableID),
         numberOfProperties = propertyOrder.length,
-        sortedArray = [],
         tr = document.createElement("tr");
 
-    for(var i = 0; i < numberOfProperties; i++){
-        var td = document.createElement("td");
-        tr.appendChild(td);
-    }
-
-    for (var prop in objectToIterate) {
+    for (var prop in propertyOrder) {
         // important check that this is objects own property 
         // not from prototype prop inherited
+        var td = document.createElement("td");
         if (objectToIterate.hasOwnProperty(prop)) {
-            var index = propertyOrder.indexOf(prop);
-            if(index != -1){
-                var text = document.createTextNode(objectToIterate[prop]);
-                tr.getElementsByTagName("td")[index].appendChild(text);
-            }
+            td.appendChild(document.createTextNode(objectToIterate[prop]));
         }
+        tr.appendChild(td);
     }
-
     document.getElementById(tableID).getElementsByTagName("tbody")[0].appendChild(tr);
 }
 
